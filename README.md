@@ -1,0 +1,2 @@
+# Emma
+Shift scheduling project
