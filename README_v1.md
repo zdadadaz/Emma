@@ -25,5 +25,7 @@ https://www.bilibili.com/video/BV14J4114768?from=search&seid=9912466386981530341
 2. Github: 用來放程式的地方 https://github.com
 3. Anaconda: python的虛擬環境 https://anaconda.org
 4. MAMP: 架SQL伺服器的軟體 https://www.mamp.info/en/mac/
+5. Vscode: https://code.visualstudio.com
+6. brew: https://brew.sh
 
 
