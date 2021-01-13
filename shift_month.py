@@ -34,7 +34,9 @@ for i in range(Total_employees):
     Yb[i] = LpVariable('kimo_'+str(i), lowBound=0, upBound=1, cat='Integer') #'Continuous', 'Integer'
 
 # Objectives:
+# prob = LpProblem("Mixed Problem", LpMaximize)
 prob = LpProblem("Mixed Problem", LpMinimize)
+# prob += lpSum([Xbt[(i,t)] for i in range(Total_employees) for t in T]) - lpSum([Yb[i]*kimochi_ratio[i] for i in range(Total_employees)])
 prob += lpSum([Xbt[(i,t)] for i in range(Total_employees) for t in T]) + lpSum([Yb[i]*kimochi_ratio[i] for i in range(Total_employees)])
 for t in T:
     if t in alldayoff: 
@@ -82,7 +84,7 @@ for t in T:
             tmp += ['work']
         else:
             tmp += ['off']
-    out_dict[t] = tmp
+    out_dict[t+1] = tmp
 # print(out_dict)
 out_df = pd.DataFrame.from_dict(out_dict)
 out_df.to_csv('output.csv',index=False)
